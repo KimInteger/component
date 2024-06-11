@@ -8,6 +8,9 @@
 <body>
   <div id="root">
   </div>
+  <script src="./tagComponent.js"></script>
+  <script src="./mApp.js"></script>
+  <script src="./renderApp.js"></script>
   <script>
     const names = [
       "구하림",
@@ -32,35 +35,6 @@
       "황재민"
     ];
     const root = document.getElementById('root');
-
-    const tagComponent = (tagName,textNode, tagName2) => {
-      return `
-      <${tagName}>${textNode}</${tagName2}>
-      `;
-    };
-    
-    const app = () => {
-      let name = [];
-      names.forEach((item)=>{
-        if (item === "김정수") {
-          return name.push(tagComponent("h1", item, "h1"));
-        } else {
-          if(item[0] === '이' ){
-            console.log(typeof(item));
-            return name.push(tagComponent("p style='color:blue'",item,"p"));
-          } else {
-            return name.push(tagComponent("p", item,"p"));
-          }
-        }
-      });
-      return name.join('');
-    };
-    
-    console.log(app());
-
-    const renderApp = () => {
-      root.innerHTML = app();
-    }
 
     document.addEventListener('DOMContentLoaded',()=>{
       renderApp();
