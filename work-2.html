@@ -3,9 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>와 work-2 아시는구나!</title>
 </head>
 <body>
-  
+  <div id="root"></div>
+  <script>
+    const root = document.getElementById('root');
+
+    const h1Component = () => {
+      return `<h1>인티저 입니다.</h1>`;
+    };
+
+    const app = () => {
+      return h1Component();
+    };
+
+    const renderApp = () => {
+      root.innerHTML = app();
+    }
+
+    document.addEventListener('DOMContentLoaded',()=>{
+      renderApp();
+    })
+
+  </script>
 </body>
 </html>
