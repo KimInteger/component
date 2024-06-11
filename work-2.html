@@ -10,13 +10,21 @@
   <script>
     const root = document.getElementById('root');
 
-    const h1Component = () => {
-      return `<h1>인티저 입니다.</h1>`;
+    const tagComponent = (tagName,textNode) => {
+      return `
+      <${tagName}>${textNode}</${tagName}>
+      `;
     };
-
+    
     const app = () => {
-      return h1Component();
+      return `
+        ${tagComponent("p","공욱재입니다.")}
+        ${tagComponent("h3","공미남입니다.")}
+        ${tagComponent("button","월평파더입니다.")}
+      `;
     };
+    
+    console.log(app());
 
     const renderApp = () => {
       root.innerHTML = app();
